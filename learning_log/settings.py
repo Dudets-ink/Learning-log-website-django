@@ -24,6 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d$ua53_hi8@h9wy$nz^2oi7kecxh7jswnt6upt34rwjg$bc#)u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
 else:
@@ -67,7 +69,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
