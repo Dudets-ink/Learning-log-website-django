@@ -5,10 +5,10 @@ from . import views
 
 app_name = 'learning_logs'
 urlpatterns = [
-        path('', views.index, name='index'), # домашняя страница
-        path('topics/', views.topics, name='topics'), # просмотр списка тем 
-        path('topics/<int:topic_id>/', views.topic, name='topic'), # просмотр темы
-        path('new_topic/', views.new_topic, name='new_topic'), # создание новой темы пользователем
-        path('new_entry/<int:topic_id>', views.new_entry, name='new_entry'), # создание новой записи пользователем
-        path('edit_entry/<int:entry_id>', views.edit_entry, name='edit_entry'), # редактирование записи
+        path('', views.index, name='index'), # welcome page
+        path('topics/', views.topics, name='topics'), # topics page
+        path('topics/<int:topic_id>/', views.topic, name='topic'), # certain topic page
+        path('new_topic/', views.new_topic, name='new_topic'), # topic creation page
+        path('new_entry/<int:topic_id>', views.new_entry, name='new_entry'), # entry creation page
+        path('edit_entry/<int:entry_id>', views.edit_entry, name='edit_entry'), # entry edit page
         ]
