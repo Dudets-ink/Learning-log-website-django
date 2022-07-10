@@ -1,18 +1,9 @@
+from .utils import *
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
-
-# help functions:
-
-def check_object_owner(place, request):
-    """Checks if user is object owner"""
-
-    if place.owner != request.user:
-        raise Http404
-
-# All  views :
 
 def index(request):
     """Welcome page"""
